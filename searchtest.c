@@ -23,8 +23,8 @@ int main(int argc, char **argv) {
 	if(SEARCH_MODE == 1) {
 		// Process test 1
 		file = fopen("proctest1_data", "w");
-		for(i=1; i<=100; i+=1) {
-			search_test(i, 100, 10, file);
+		for(i=16; i<=pow(2,16); i+=1) {
+			search_test(16, i, 10, file);
 		}
 		fclose(file);
 		// Process test 2
@@ -33,22 +33,33 @@ int main(int argc, char **argv) {
 			search_test(i, 10000, 10, file);
 		}
 		fclose(file);
+                // Process test 3
+                file = fopen("proctest3_data", "w");
+                for(i=1; i<=100; i+=1) {
+                        search_test(i, 10000, 10, file);
+                }
+                fclose(file);
 	}
 	
 	// Thread tests.
 	if(SEARCH_MODE == 2) {
 		// Thread test 1
 		file = fopen("threadtest1_data", "w");
-		for(i=1; i<=100; i+=1) {
-			search_test(i, 100, 10, file);
+		for(i=16; i<=(int)pow(4,8); i*=2) {
+			search_test(16, i, 10, file);
 		}
 		fclose(file);
 		// Thread test 2
 		file = fopen("threadtest2_data", "w");
 		for(i=1; i<=64; i*=2) {
-			search_test(i, 1024*1024*64, 10, file);
+			search_test(i, (int)pow(2,27), 10, file);
 		}
 		fclose(file);
+                // Thread test 3
+                file = fopen("threadtest3_data", "w");
+                for(i=1; i<=100; i+=1) {
+                        search_test(i, (int)pow(2,25), 10, file);
+                }
 	}
 }
 
