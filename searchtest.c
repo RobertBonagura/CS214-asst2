@@ -46,7 +46,7 @@ int main(int argc, char **argv) {
 		// Thread test 2
 		file = fopen("threadtest2_data", "w");
 		for(i=1; i<=64; i*=2) {
-			search_test(i, 1000000, 10, file);
+			search_test(i, 1024*1024*64, 10, file);
 		}
 		fclose(file);
 	}
