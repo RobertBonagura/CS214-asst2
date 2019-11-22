@@ -5,23 +5,23 @@ PROCESS TESTS (
   Process Test 1 (
     Goal: Vary size of list with fixed number of processes.
     --
-    Number of processes:
-    Size of list:
-    Number of batches:
+    Number of processes: 
+    Size of list: 
+    Number of batches: 10
   )
   Process Test 2 (
     Goal: Vary number of processes with fixed size of list.
     --
-    Number of processes:
-    Size of list:
-    Number of batches:
+    Number of processes: 1 to 64, increment by *2
+    Size of list: 
+    Number of batches: 10
   )
   Process Test 3 (
-    Goal:
+    Goal: Find tradeoff where more processes are slower.
     --
-    Number of processes:
-    Size of list:
-    Number of batches:
+    Number of processes: 1 to 100, increment by +1
+    Size of list: 
+    Number of batches: 10
   )
 )
 
@@ -29,22 +29,22 @@ THREAD TESTS (
   Thread Test 1 (
     Goal: Vary size of list with fixed number of threads.
     --
-    Number of processes:
-    Size of list:
-    Number of batches:
+    Number of processes: 16
+    Size of list: 4^2 to 4^8, increment by *4
+    Number of batches: 10
   )
   Thread Test 2 (
     Goal: Vary number of threads with fixed size of list.
     --
-    Number of processes:
-    Size of list:
-    Number of batches:
+    Number of processes: 1 to 64, increment by *2
+    Size of list: 2^27 constant
+    Number of batches: 10
   )
   Thread Test 3 (
-    Goal:
+    Goal: Find tradeoff where more threads are slower.
     --
-    Number of processes:
-    Size of list:
-    Number of batches:
+    Number of processes: 1 to 100, increment by +1
+    Size of list: 2^25 constant
+    Number of batches: 10
   )
 )
