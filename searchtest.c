@@ -91,7 +91,7 @@ int search_test(int n_parallels, int list_size, int n_batches, FILE* data_file) 
 		}
 		end_single = clock();
 		time_array[j] = (double) (end_single - start_single);
-		printf("Time for %d searches with %d parallels: %.2f seconds\n", REPETITIONS, n_parallels, time_array[j] / CLOCKS_PER_SEC);
+		printf("Time for %d searches on list of size %d with %d parallels: %.2f seconds\n", REPETITIONS, list_size, n_parallels, time_array[j] / CLOCKS_PER_SEC);
 		modifyList(list, list_size, indexOfValue);
 	}
 	end = clock();
