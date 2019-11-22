@@ -19,7 +19,7 @@ PROCESS TESTS (
   Process Test 3 (
     Goal: Find tradeoff where more processes are slower.
     --
-    Number of processes: 1 to 100, increment by +1
+    Number of processes: 1 to 30, increment by +1
     Size of list: 
     Number of batches: 10
   )
@@ -43,7 +43,7 @@ THREAD TESTS (
   Thread Test 3 (
     Goal: Find tradeoff where more threads are slower.
     --
-    Number of processes: 1 to 100, increment by +1
+    Number of processes: 1 to 30, increment by +1
     Size of list: 2^25 constant
     Number of batches: 10
   )
