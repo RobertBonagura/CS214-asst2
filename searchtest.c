@@ -125,7 +125,11 @@ int search_test(int n_parallels, int list_size, int n_batches, FILE* file) {
 	printf("\n");	
 
 	// Saving data for figures.
-	fprintf(file, "%d\t%.2f\t\n", n_parallels, time_average / CLOCKS_PER_SEC);
+	// <number of repetitons> <number of procs/threads>
+	// (tab)
+	// <min> <max> <average> <standard deviation>
+	// (newline)
+	fprintf(file, "%d %d\t%.2f %.2f %.2f %.2f\n", REPETITIONS, n_parallels, time_min / CLOCKS_PER_SEC, time_max / CLOCKS_PER_SEC, time_average / CLOCKS_PER_SEC, time_std / CLOCKS_PER_SEC);
 	
 	
 	// Heap cleanup.
