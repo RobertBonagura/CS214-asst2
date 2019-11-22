@@ -52,7 +52,7 @@ int main(int argc, char **argv) {
 	}
 }
 
-int search_test(int n_parallels, int list_size, int n_batches, FILE* data_file) {
+int search_test(int n_parallels, int list_size, int n_batches, FILE* file) {
 	int j, k, indexOfValue;	
 
 	double* time_array = malloc(n_batches*sizeof(double));
