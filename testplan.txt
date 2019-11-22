@@ -1,0 +1,50 @@
+Spooky Searching Test Suite
+
+
+PROCESS TESTS (
+  Process Test 1 (
+    Goal: Vary size of list with fixed number of processes.
+    --
+    Number of processes:
+    Size of list:
+    Number of batches:
+  )
+  Process Test 2 (
+    Goal: Vary number of processes with fixed size of list.
+    --
+    Number of processes:
+    Size of list:
+    Number of batches:
+  )
+  Process Test 3 (
+    Goal:
+    --
+    Number of processes:
+    Size of list:
+    Number of batches:
+  )
+)
+
+THREAD TESTS (
+  Thread Test 1 (
+    Goal: Vary size of list with fixed number of threads.
+    --
+    Number of processes:
+    Size of list:
+    Number of batches:
+  )
+  Thread Test 2 (
+    Goal: Vary number of threads with fixed size of list.
+    --
+    Number of processes:
+    Size of list:
+    Number of batches:
+  )
+  Thread Test 3 (
+    Goal:
+    --
+    Number of processes:
+    Size of list:
+    Number of batches:
+  )
+)
