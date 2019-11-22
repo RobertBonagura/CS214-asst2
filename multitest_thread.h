@@ -1,11 +1,12 @@
 #ifndef _THREAD_H
 #define _THREAD_H
-#include "helper.h"
+#include "multitest.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <pthread.h>
 
 #define _search(list, size, parallels, target) search((list), (size), (parallels), (target))
+#define SEARCH_MODE 2
 #define THREAD_DEBUG 0
 
 typedef struct _thread_atts {

@@ -1,4 +1,4 @@
-#include "proc.h"
+#include "multitest_proc.h"
 
 
 int search(int* list, int list_size, int n_procs, int target){

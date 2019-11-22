@@ -1,14 +1,14 @@
-all: main.c helper.o
-	gcc -o test main.c helper.o
-helper.o: helper.c
-	gcc -c helper.c
-proc: main.c proc.o helper.o
-	gcc -o test main.c proc.o helper.o
-proc.o: proc.c helper.o
-	gcc -c proc.c 
-thread: main.c thread.o helper.o
-	gcc -lpthread -o test main.c thread.o helper.o
-thread.o: thread.c helper.o
-	gcc -c thread.c
+all:
+	ERROR: Try 'make proc' or 'make thread'
+multitest.o: multitest.c
+	gcc -c multitest.c
+proc: searchtest.c multitest_proc.o multitest.o
+	gcc -lm -o test searchtest.c multitest_proc.o multitest.o -DPROC
+multitest_proc.o: multitest_proc.c multitest.o
+	gcc -c multitest_proc.c 
+thread: searchtest.c multitest_thread.o multitest.o
+	gcc -lm -lpthread -o test searchtest.c multitest_thread.o multitest.o -DTHREAD
+multitest_thread.o: multitest_thread.c multitest.o
+	gcc -c multitest_thread.c
 clean:
 	rm test; rm *.o

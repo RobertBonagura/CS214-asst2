@@ -1,4 +1,4 @@
-#include "thread.h"
+#include "multitest_thread.h"
 
 /*
 thread_search(): a driver to do multiple searches on a randomized list using multithreading.

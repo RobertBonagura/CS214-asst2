@@ -1,9 +1,10 @@
 #ifndef _PROC_H
 #define _PROC_H
 #include <unistd.h>
-#include "helper.h"
+#include "multitest.h"
 
 #define _search(list, size, parallels, target) search((list), (size), (parallels), (target))
+#define SEARCH_MODE 1
 
 // Structs
 typedef struct _Sublist {
