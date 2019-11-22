@@ -17,13 +17,42 @@
 
 int main(int argc, char **argv) {	
 	int i;
-
-	for(i=1; i<=64; i*=2) {
-		search_test(i, 1000000, 10);
+	FILE *file;
+	
+	// Process tests.
+	if(SEARCH_MODE == 1) {
+		// Process test 1
+		file = fopen("proctest1_data", "w");
+		for(i=1; i<=100; i+=1) {
+			search_test(i, 100, 10, file);
+		}
+		fclose(file);
+		// Process test 2
+		file = fopen("proctest2_data", "w");
+		for(i=1; i<=64; i*=2) {
+			search_test(i, 10000, 10, file);
+		}
+		fclose(file);
+	}
+	
+	// Thread tests.
+	if(SEARCH_MODE == 2) {
+		// Thread test 1
+		file = fopen("threadtest1_data", "w");
+		for(i=1; i<=100; i+=1) {
+			search_test(i, 100, 10, file);
+		}
+		fclose(file);
+		// Thread test 2
+		file = fopen("threadtest2_data", "w");
+		for(i=1; i<=64; i*=2) {
+			search_test(i, 1000000, 10, file);
+		}
+		fclose(file);
 	}
 }
 
-int search_test(int n_parallels, int list_size, int n_batches) {
+int search_test(int n_parallels, int list_size, int n_batches, FILE* data_file) {
 	int j, k, indexOfValue;	
 
 	double* time_array = malloc(n_batches*sizeof(double));
@@ -39,9 +68,6 @@ int search_test(int n_parallels, int list_size, int n_batches) {
 	// Get list of scrambled numbers.
 	int* list = listGen(list_size);
 
-	// Prepare folder to write results to.
-	//FILE *file = fopen("proc_data", "w");
-	
 	// Display the current multi-mode.
 	printf("\n");
 	if(SEARCH_MODE == 1) {
@@ -99,7 +125,7 @@ int search_test(int n_parallels, int list_size, int n_batches) {
 	printf("\n");	
 
 	// Saving data for figures.
-	//fprintf(file, "%d\t%.2f\t\n", i, time_total[i_t]);
+	fprintf(file, "%d\t%.2f\t\n", n_parallels, time_average / CLOCKS_PER_SEC);
 	
 	
 	// Heap cleanup.
