@@ -131,9 +131,7 @@ int search_test(int n_parallels, int list_size, int n_batches, FILE* file) {
 	// (newline)
 	fprintf(file, "%d %d\t%.2f %.2f %.2f %.2f\n", REPETITIONS, n_parallels, time_min / CLOCKS_PER_SEC, time_max / CLOCKS_PER_SEC, time_average / CLOCKS_PER_SEC, time_std / CLOCKS_PER_SEC);
 	
-	
 	// Heap cleanup.
 	free(time_array);
-	//fclose(file);
 }
 
