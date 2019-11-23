@@ -1,0 +1,27 @@
+Test 1 
+
+Test 1 looks at how varying the size of the list effects runtime when there is a fixed number of processes/threads. Lists of size 2^22, 2^23, ... 2^7 were used, each being run by 16 total processes/threads.
+
+The results were that both threads and functions slowed down as a result of the increase in size. This confirmed out expectations on how threads and processes would behave as the size of the array they iterate over increases.
+
+One thing to note however, as the lists sizes doubled, so did the average runtime for Threads. Processes however, grew much more rapidly as shown in the graph below.
+
+Test 2
+
+Test 2 looks at how increasing the number of processes/threads over a list  of a fixed length effects runtime. We chose a relatively large list for this test, using a list of size 2^16. For the number of processes/threads we chose sizes 1, 2, 4, 8, 16, 32, and 64.
+
+Despite the number of threads or processes, the original runtime for this test gave very small time values, where the maximum value returned was .01 seconds. So to make the data more meaningful, we measured how long it would take to search through the list 10 times.
+
+Threads were pretty consistent, not slowing down much at all as the number of threads increased. Processes however, took much longer to return as the number of processes increased. Though it was surprisisng that threads did not grow so much, the increase in time by processes was expected.
+
+Test 3
+
+Because there was such a small increase in the time as the number of threads increases, we wanted to investigate what would happen if the number of threads approached the size of the list. In test 3, we iterated the number of processes/threads from 1 to 100 and search a list of size 100. 
+
+Though only a small increase in time was found, the average time returned by threads slowed sightly as the number of threads increased, despite the list being relatively small and not increasing. Processes however grew at a much faster rate.
+
+Challenges
+
+One issue we had was getting the accurate runtime from processes. In the test data analyzed above, we had to retrieve thid data by isolating the test functions into seperate programs. We notice the longer the program ran, and the more processes it created, the longer it would take to create a new process. The program can run all three test cases aat once, however it returns much larger values for the run time when compiled to analyze processes. We suspect this is due to some processes living in the backgroudn of the program and not ever being completely killled.
+
+This may explain why in Test 1 processes grow rapidly as the size doubles, despite using a fixed number of processes.
