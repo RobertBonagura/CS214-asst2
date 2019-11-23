@@ -25,7 +25,7 @@ int main(int argc, char **argv) {
 		// Process test 1
 		file = fopen("proctest1_data", "w");
 		int* list_1;
-		for(i=(int)pow(2,22); i<=(int)pow(2,28); i*=2) {
+		for(i=(int)pow(2,22); i<=(int)pow(2,27); i*=2) {
 			list_1 = listGen(i);
 			search_test(16, i, 10, file, list_1, REPETITIONS);
 			free(list_1);
