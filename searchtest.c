@@ -32,13 +32,13 @@ int main(int argc, char **argv) {
 		}
 		fclose(file);
 		// Process test 2
-		//int* list_2 = listGen((int)pow(2,16));
-		//file = fopen("proctest2_data", "w");
-		//for(i=1; i<=64; i*=2) {
-		//	search_test(i, (int)pow(2,16), 10, file, list_2, 10);;
-		//}
-		//free(list_2);
-		//fclose(file);
+		int* list_2 = listGen((int)pow(2,16));
+		file = fopen("proctest2_data", "w");
+		for(i=1; i<=64; i*=2) {
+			search_test(i, (int)pow(2,16), 10, file, list_2, 10);;
+		}
+		free(list_2);
+		fclose(file);
         // Process test 3
         int* list_3 = listGen(100);
 		file = fopen("proctest3_data", "w");
